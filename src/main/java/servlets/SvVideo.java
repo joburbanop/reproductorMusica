@@ -2,7 +2,11 @@
 package servlets;
 
 import com.umariana.mundo.Video;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -39,22 +43,30 @@ public class SvVideo extends HttpServlet {
             throws ServletException, IOException {
         
         String idVideo=request.getParameter("idVideo");
-        System.out.println(idVideo);
+        //System.out.println(idVideo);
         String  titulo=request.getParameter("titulo");
-        System.out.println(titulo);
+        //System.out.println(titulo);
         String autor=request.getParameter("autor");
-        System.out.println(autor);
+        //System.out.println(autor);
         String aniho=request.getParameter("aniho");
-        System.out.println(aniho);
+        //System.out.println(aniho);
         String categoria=request.getParameter("categoria");
-        System.out.println(categoria);
+        //System.out.println(categoria);
         String url=request.getParameter("url");
-        System.out.println(url);
+        //System.out.println(url);
         String letra=request.getParameter("letra");
-        System.out.println(letra);
+        //System.out.println(letra);
         Video nuevo=new Video(Integer.parseInt(idVideo),titulo,autor,aniho,categoria,url,letra);
         videos.add(nuevo);
+       
+        // Get the output stream
+         // Create an ObjectOutputStream
+        FileOutputStream fileOutputStream = new FileOutputStream(getServletContext().getRealPath("videos.data"),true);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        objectOutputStream.writeObject(nuevo);
         
+        objectOutputStream.close();
+        fileOutputStream.close();
         
        
         // Redirigir a la página index.jsp
@@ -68,6 +80,7 @@ public class SvVideo extends HttpServlet {
     }// </editor-fold>
 
     public static List<Video> getVideos() {
+   
         return videos;
     }
 

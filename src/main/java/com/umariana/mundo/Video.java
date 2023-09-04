@@ -4,11 +4,13 @@
  */
 package com.umariana.mundo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author jonathan
- */
-public class Video {
+ */ 
+public class Video implements Serializable {
     private int idVideo;
     private String titulo;
     private String autor;

@@ -51,7 +51,7 @@
             <h1>sistema de reproduccion</h1>
             <br><br>  
             <div class="cotenedor">
-                <div class="card mb-3 " style="max-width: 18rem; background-color: #0d6efd; margin: 2px">
+                <div class="card mb-3 " style="width: 20%; background-color: #0d6efd; margin: 2px">
                     <img src="./imagenes/musci.svg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title" style="color: white">Agregar musica</h5>
@@ -61,7 +61,7 @@
                    </div>
                 </div>
                 
-                <div class="card mb-3" style="max-width: 18rem; background-color: #0d6efd; margin: 2px">
+                <div class="card mb-3" style="width: 20%; background-color: #0d6efd; margin: 2px">
                     <img src="./imagenes/list.svg" alt="alt"/>
                     <div class="card-body">
                       <h5 class="card-title" style="color: white">videos agregados</h5>
